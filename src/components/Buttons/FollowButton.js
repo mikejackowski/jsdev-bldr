@@ -13,6 +13,7 @@ const StyledButton = styled.button`
   color: #FFFFFF;
   letter-spacing: 4.2px;
   text-transform: uppercase;
+  cursor: pointer;
 
   @media (max-width: 500px){
     width: 248px;

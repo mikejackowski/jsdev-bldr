@@ -35,7 +35,9 @@ class Profile extends Component {
   increaseLikeHandler = () => {
     const oldCount = this.state.likes;
     const clickStatus = this.state.likeButtonClicked;
-    const updatedCount = oldCount + 1;
+    var updatedCount;
+    clickStatus ? updatedCount = oldCount - 1 : updatedCount = oldCount + 1;
+
     this.setState({
       likes: updatedCount,
       likeButtonClicked: !clickStatus
@@ -46,7 +48,7 @@ class Profile extends Component {
     const oldCount = this.state.followers;
     const clickStatus = this.state.followButtonClicked;
     var updatedCount;
-      clickStatus ? updatedCount = oldCount - 1 : updatedCount = oldCount + 1;
+    clickStatus ? updatedCount = oldCount - 1 : updatedCount = oldCount + 1;
 
     this.setState({
       followers: updatedCount,
@@ -62,11 +64,11 @@ class Profile extends Component {
           name="Harvey Specter"
           location="New York, USA"
           increaseLikes={this.increaseLikeHandler}
+          likeStatus={this.state.likeButtonClicked}
           />
         <ProfileCounters
           likesNumber={this.state.likes}
           followingNumber={this.state.following}
-          likeStatus={this.state.likeButtonClicked}
           followersNumber={this.state.followers}
           increaseFollowers={this.increaseFollowersHandler}
           followStatus={this.state.followButtonClicked}
