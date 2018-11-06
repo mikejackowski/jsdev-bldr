@@ -2,6 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledWrapperDiv = styled.div`
+  text-align: left;
+  display: flex;
+  flex-wrap: wrap;
+
+  @media (max-width: 500px) {
+    text-align: center;
+  }
 `
 const StyledNameP = styled.div`
   position: relative;
@@ -11,6 +18,8 @@ const StyledNameP = styled.div`
   letter-spacing: 0;
   margin: 0;
   padding: 0;
+  flex-basis: 100%;
+  align-self: flex-end;
 `
 const StyledLocationP = styled.p`
   margin: 0;
@@ -19,6 +28,11 @@ const StyledLocationP = styled.p`
   font-size: 12px;
   color: #8298B9;
   letter-spacing: 0;
+  flex-basis: 100%;
+
+  @media (max-width: 500px) {
+    padding: 0 0 35px 0;
+  }
 `
 
 const StyledHearthDiv = styled.div`
@@ -26,7 +40,7 @@ const StyledHearthDiv = styled.div`
   width: 7px;
   transform: rotate(-45deg);
   position: absolute;
-  right: 34%;
+  right: 63%;
   top: 10px;
   cursor: pointer;
   background-color: ${props => props.clicked ?  "red" : "grey"};
@@ -38,11 +52,16 @@ const StyledHearthDiv = styled.div`
     height: 7px;
     position: absolute;
     width: 7px;
+    left: 4px;
   }
 
   &::before {
   top: -4px;
   left: 0;
+  }
+
+  @media (max-width: 500px) {
+    right: 24%;
   }
 `
 

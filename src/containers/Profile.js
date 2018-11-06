@@ -20,7 +20,16 @@ const StyledWrapperDiv = styled.div`
 
   @media (max-width: 500px) {
       width: 284px;
-      height: 591px;
+      height: 235px;
+  }
+`
+
+const StyledProfileDataWrappeDiv = styled.div`
+  display: grid;
+  grid-template-columns: 110px auto;
+
+  @media (max-width: 500px) {
+    grid-template-columns: auto;
   }
 `
 class Profile extends Component {
@@ -59,13 +68,15 @@ class Profile extends Component {
   render() {
     return (
       <StyledWrapperDiv>
-        <ProfileImage profileImageUrl={profilePic}/>
-        <ProfileName
-          name="Harvey Specter"
-          location="New York, USA"
-          increaseLikes={this.increaseLikeHandler}
-          likeStatus={this.state.likeButtonClicked}
-          />
+        <StyledProfileDataWrappeDiv>
+          <ProfileImage profileImageUrl={profilePic}/>
+          <ProfileName
+            name="Harvey Specter"
+            location="New York, USA"
+            increaseLikes={this.increaseLikeHandler}
+            likeStatus={this.state.likeButtonClicked}
+            />
+        </StyledProfileDataWrappeDiv>
         <ProfileCounters
           likesNumber={this.state.likes}
           followingNumber={this.state.following}

@@ -8,7 +8,9 @@ const StyledDivWrapper = styled.div`
   grid-template-columns: repeat(4, 20%);
 
   @media (max-width: 500px){
-
+    grid-template-columns: repeat(3, 33%);
+    grid-template-rows: repeat(2, 100%);
+    grid-template-areas: "1 2 3" "4 4 4";
   }
 `
 
@@ -16,6 +18,9 @@ const StyledCounterWrapper = styled.div`
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: 29px;
+  @media (max-width: 500px){
+    grid-area: 1,2,3;
+  }
 `
 const StyledNumberP = styled.p`
   font-family: Montserrat-Regular;
