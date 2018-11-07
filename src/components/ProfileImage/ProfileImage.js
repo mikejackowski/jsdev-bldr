@@ -14,7 +14,7 @@ const StyledImg = styled.img`
   }
 `
 
-const ProfileImage = (props) => (
+const ProfileImage = () => (
   <StyledImg src={zdjecie}/>
 )
 

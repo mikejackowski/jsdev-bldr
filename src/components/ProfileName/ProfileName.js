@@ -43,11 +43,11 @@ const StyledHearthDiv = styled.div`
   right: 63%;
   top: 10px;
   cursor: pointer;
-  background-color: ${props => props.clicked ?  "red" : "grey"};
+  background-color: ${props => props.clicked ?  "red" : "#D9D9D9"};
 
   &::before,::after{
     content: "";
-    background-color: ${props => props.clicked ? "red"  : "grey" };
+    background-color: ${props => props.clicked ? "red"  : "#D9D9D9" };
     border-radius: 50%;
     height: 7px;
     position: absolute;

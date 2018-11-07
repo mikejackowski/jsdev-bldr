@@ -13,10 +13,10 @@ const StyledDiv = styled.div`
   }
 `
 
-const Header = (props) => (
+const HeaderWrapper = (props) => (
   <StyledDiv>
     {props.children}
   </StyledDiv>
 )
 
-export default Header;
+export default HeaderWrapper;

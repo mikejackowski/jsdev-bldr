@@ -14,6 +14,8 @@ const StyledButton = styled.button`
   letter-spacing: 4.2px;
   text-transform: uppercase;
   cursor: pointer;
+  border: none;
+  padding: 0;
 
   @media (max-width: 500px){
     width: 248px;
