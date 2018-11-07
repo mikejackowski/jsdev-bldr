@@ -4,8 +4,6 @@ import styled from 'styled-components';
 import ProfileImage from '../components/ProfileImage/ProfileImage';
 import ProfileName from '../components/ProfileName/ProfileName';
 import ProfileCounters from '../components/ProfileCounters/ProfileCounters';
-import Backdrop from '../UI/Backdrop';
-import ShareMenu from '../components/ShareMenu/ShareMenu';
 
 import profilePic from '../assets/images/hs.png';
 import shareIcon from '../assets/images/shareicon.png';
@@ -52,7 +50,6 @@ class Profile extends Component {
     following: 732,
     followers: 0,
     followButtonClicked: false,
-    displayShareMenu: false,
   }
 
   increaseLikeHandler = () => {
@@ -79,26 +76,13 @@ class Profile extends Component {
     });
   }
 
-  shareMenuHandler = () => {
-    var shareDisplayed = this.state.displayShareMenu;
-    this.setState({
-      displayShareMenu: !shareDisplayed
-    });
-  }
-
   render() {
     return (
       <StyledWrapperDiv>
-        <Backdrop
-          show={this.state.displayShareMenu}
-          closeBackdropHandler={this.shareMenuHandler}/>
-        <ShareMenu
-          show={this.state.displayShareMenu}
-          copyToClipBoard={this.copyToClipBoardHandler}/>
         <StyledProfileDataWrappeDiv>
           <StyledShareIcon
             src={shareIcon}
-            onClick={this.shareMenuHandler}/>
+            onClick={this.props.shareMenuHandler}/>
           <ProfileImage profileImageUrl={profilePic}/>
           <ProfileName
             name="Harvey Specter"

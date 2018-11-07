@@ -5,8 +5,9 @@ import {CopyToClipboard} from 'react-copy-to-clipboard';
 import copyIcon from '../../assets/images/copy.svg';
 
 const StyledDiv = styled.div`
-  position: fixed;
-
+  position: absolute;
+  left: 26%;
+  top: 5%;
   width: 250px;
   height: 100px;
 
@@ -15,9 +16,7 @@ const StyledDiv = styled.div`
   border-radius: 5px;
 
   z-index: 1000;
-  @media (max-width: 500px) {
-
-  }
+  @media (max-width: 500px) {left: 11%;}
 `
 const StyledAdressDiv = styled.div`
   width: 100%;
@@ -50,8 +49,7 @@ const ShareMenu = (props) => (
       <CopyToClipboard
         text={window.location.href}>
         <StyledImg
-          src={copyIcon}
-          copyToClipBoardHandler={props.copyToClipBoard}/>
+          src={copyIcon}/>
       </CopyToClipboard>
 
     </StyledDiv>

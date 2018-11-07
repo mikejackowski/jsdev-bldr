@@ -4,10 +4,12 @@ import styled from 'styled-components';
 import HeaderWrapper from '../components/Header/HeaderWrapper';
 import Profile from '../containers/Profile';
 import Comments from '../containers/Comments';
+import ShareMenu from '../components/ShareMenu/ShareMenu';
+import Backdrop from './Backdrop';
 
 
 const StyledLayoutWrapper = styled.div`
-  width: 1000px;
+  width: 100%;
   background: white;
   text-align: center;
 `
@@ -19,6 +21,7 @@ const StyledLayout = styled.div`
   background: #FFFFFF;
   box-shadow: 0 0 4px 0 rgba(172,172,172,0.50);
   border-radius: 5px;
+  position: relative;
 
   @media (max-width: 500px) {
     width: 320px;
@@ -28,7 +31,8 @@ const StyledLayout = styled.div`
 class Layout extends Component {
 
   state = {
-    commentsVisible: true
+    commentsVisible: true,
+    displayShareMenu: false
   }
 
   collapseCommentsButtonHandler = () => {
@@ -37,13 +41,27 @@ class Layout extends Component {
       commentsVisible: !showingComments
     })
   }
+
+  shareMenuHandler = () => {
+    var shareDisplayed = this.state.displayShareMenu;
+    this.setState({
+      displayShareMenu: !shareDisplayed
+    });
+  }
   render() {
     return (
       <StyledLayoutWrapper>
         <StyledLayout
           commentsVisible={this.state.commentsVisible}>
+          <Backdrop
+            show={this.state.displayShareMenu}
+            commentsDisplayed={this.state.commentsVisible}
+            closeBackdropHandler={this.shareMenuHandler}/>
+        <ShareMenu
+          show={this.state.displayShareMenu}/>
           <HeaderWrapper>
-            <Profile/>
+            <Profile
+              shareMenuHandler={this.shareMenuHandler}/>
             <Comments
               commentsVisible={this.state.commentsVisible}
               collapseCommentsButtonHandler={this.collapseCommentsButtonHandler}/>

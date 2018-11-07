@@ -2,17 +2,20 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledDiv = styled.div`
-  width: 100%;
-  height: 100%;
-  position: fixed;
+  width: 500px;
+  height: ${props => props.commentsVisible ? "905px" : "331px"};
+  position: absolute;
   z-index: 100;
-  left: 0;
-  top: 0;
   background-color: rgba(0, 0, 0, 0.5);
+
+  @media (max-width: 500px){
+    width: 320px;
+    height: ${props => props.commentsVisible ? "880px" : "388px"};
+  }
 `
 
 const Backdrop = (props) => (
-  props.show ? <StyledDiv onClick={props.closeBackdropHandler}/> : null
+  props.show ? <StyledDiv commentsVisible={props.commentsDisplayed} onClick={props.closeBackdropHandler}/> : null
 )
 
 export default Backdrop;
