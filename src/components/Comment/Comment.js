@@ -62,6 +62,7 @@ function FormatDate(dateString) {
   return formatDistance(new Date(dateString).toISOString(), new Date().toISOString());
 
 }
+
 const Comment = (props) => (
   <StyledWrapper>
     <StyledImg src={pic}/>

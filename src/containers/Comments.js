@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { compareDesc } from 'date-fns';
+
 import HideCommentsButton from '../components/Buttons/HideCommentsButton';
 import Comment from '../components/Comment/Comment';
 import AddComment from '../components/Comment/AddComment';
 
 import commentsJson from '../assets/json/comments.json';
 
-const StyledWrapperDiv = styled.div`
+export const StyledWrapperDiv = styled.div`
   width: 466px;
   height: ${props => props.commentsVisible ? "674px" : "100px"};
   transition: height 0.3s ease-out;
@@ -27,7 +27,7 @@ const StyledWrapperDiv = styled.div`
   }
 `
 
-const StyledLoadingDiv = styled.div`
+export const StyledLoadingDiv = styled.div`
   color: blue;
   font-size: 15px;
   text-align: center;
@@ -78,8 +78,13 @@ class Comments extends Component {
       var commentTime = new Date().toISOString();
       this.addCommentHandler(e.target.value, commentTime)
       e.target.value = "";
+      console.log("hehehe");
+      var myDiv = document.getElementById("bottomdiv");
+      myDiv.scrollIntoView({behavior: "smooth"});
     }
+
   }
+
   sortCommentsByDate = (date1, date2) => {
       var dateObj_1 = new Date(date1.props.commentDate).getTime();
       var dateObj_2 = new Date(date2.props.commentDate).getTime();
@@ -87,6 +92,7 @@ class Comments extends Component {
       if (dateObj_2 > dateObj_1) {return -1};
     return 0;
   }
+
   DisplayComments = () => {
     const commentsList = this.state.comments;
     const comments = commentsList.map(comment =>
@@ -118,7 +124,8 @@ class Comments extends Component {
             />
           <CommentsWrapper
             commentsVisible={this.props.commentsVisible}>
-          <this.DisplayComments/>
+            <this.DisplayComments/>
+            <div id="bottomdiv"/>
           </CommentsWrapper>
           <AddComment
             commentsVisible={this.props.commentsVisible}

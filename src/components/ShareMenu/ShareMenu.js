@@ -27,6 +27,7 @@ const StyledAdressDiv = styled.div`
   padding-top: 20px;
   font-size: 14px;
   color: #002C71;
+  overflow: auto;
 
 @media (max-width: 500px) {
 
