@@ -2,10 +2,13 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 import ProfileImage from '../components/ProfileImage/ProfileImage';
-
-import profilePic from '../assets/images/hs.png';
 import ProfileName from '../components/ProfileName/ProfileName';
 import ProfileCounters from '../components/ProfileCounters/ProfileCounters';
+import Backdrop from '../UI/Backdrop';
+import ShareMenu from '../components/ShareMenu/ShareMenu';
+
+import profilePic from '../assets/images/hs.png';
+import shareIcon from '../assets/images/shareicon.png';
 
 const StyledWrapperDiv = styled.div`
   width: 466px;
@@ -27,10 +30,20 @@ const StyledWrapperDiv = styled.div`
 const StyledProfileDataWrappeDiv = styled.div`
   display: grid;
   grid-template-columns: 110px auto;
+  position: relative;
 
   @media (max-width: 500px) {
     grid-template-columns: auto;
   }
+`
+
+const StyledShareIcon = styled.img`
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
 `
 class Profile extends Component {
   state = {
@@ -39,6 +52,7 @@ class Profile extends Component {
     following: 732,
     followers: 0,
     followButtonClicked: false,
+    displayShareMenu: false,
   }
 
   increaseLikeHandler = () => {
@@ -65,10 +79,26 @@ class Profile extends Component {
     });
   }
 
+  shareMenuHandler = () => {
+    var shareDisplayed = this.state.displayShareMenu;
+    this.setState({
+      displayShareMenu: !shareDisplayed
+    });
+  }
+
   render() {
     return (
       <StyledWrapperDiv>
+        <Backdrop
+          show={this.state.displayShareMenu}
+          closeBackdropHandler={this.shareMenuHandler}/>
+        <ShareMenu
+          show={this.state.displayShareMenu}
+          copyToClipBoard={this.copyToClipBoardHandler}/>
         <StyledProfileDataWrappeDiv>
+          <StyledShareIcon
+            src={shareIcon}
+            onClick={this.shareMenuHandler}/>
           <ProfileImage profileImageUrl={profilePic}/>
           <ProfileName
             name="Harvey Specter"
