@@ -3,19 +3,19 @@
     {
       "id": 1,
       "name": "Mike Ross",
-      "date": "1d",
+      "date": "Wed Nov 07 2018 12:20:41 GMT+0100 (Central European Standard Time)",
       "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget euismod enim. Duis accumsan  Aenean eget euismod enim. Duis accumsan neque sed pretium tristique.  Mauris sed ultricies lorem, ut aliquam neque.  Mauris sed ultricies lorem, ut aliquam neque."
     },
     {
       "id": 2,
       "name": "Louis Litt",
-      "date": "1d",
+      "date": "Wed Nov 05 2018 12:20:41 GMT+0100 (Central European Standard Time)",
       "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget euismod enim. Duis accumsan  Aenean eget euismod enim. Duis accumsan neque sed pretium tristique.  Mauris sed ultricies lorem, ut aliquam neque.  Mauris sed ultricies lorem, ut aliquam neque."
     },
     {
       "id": 3,
       "name": "Donna Paulsen",
-      "date": "1d",
+      "date": "Wed Nov 06 2018 12:20:41 GMT+0100 (Central European Standard Time)",
       "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget euismod enim. Duis accumsan  Aenean eget euismod enim. Duis accumsan neque sed pretium tristique.  Mauris sed ultricies lorem, ut aliquam neque.  Mauris sed ultricies lorem, ut aliquam neque."
     }
   ]

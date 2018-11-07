@@ -22,6 +22,7 @@ const StyledButton = styled.button`
     grid-area: 4, 4, 4;
     grid-column: span 3;
     place-self: center;
+    margin-top: 21px;
   }
 `
 

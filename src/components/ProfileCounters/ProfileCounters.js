@@ -18,6 +18,12 @@ const StyledCounterWrapper = styled.div`
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: 29px;
+  border-left: 1px solid #d7d7d7;
+
+  &:first-child {
+    border-left: none;
+  }
+
   @media (max-width: 500px){
     grid-area: 1,2,3;
   }
@@ -35,7 +41,6 @@ const StyledIdentifierP = styled.div`
   font-size: 10px;
   color: #343E00;
   letter-spacing: 0;
-  line-height: 29px;
   margin: 0;
   padding: 0;
   vertical-align: top;

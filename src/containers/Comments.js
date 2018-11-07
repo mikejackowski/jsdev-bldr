@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-
+import { compareDesc } from 'date-fns';
 import HideCommentsButton from '../components/Buttons/HideCommentsButton';
 import Comment from '../components/Comment/Comment';
 import AddComment from '../components/Comment/AddComment';
@@ -34,12 +34,12 @@ const StyledLoadingDiv = styled.div`
 `
 
 const CommentsWrapper = styled.div`
-  height: 495px;
+  height: 479px;
   overflow: auto;
   visibility: ${props => props.commentsVisible ? "visible" : "hidden"};
   margin-top: 30px;
   @media (max-width: 500px) {
-    height: 454px;
+    height: 440px;
   }
 `
 class Comments extends Component {
@@ -62,10 +62,10 @@ class Comments extends Component {
   }
 
   addCommentHandler = (commentValue, commentTime) => {
-    var postTime = (commentTime.getHours() + ":" + commentTime.getMinutes())
     const newComment = {
-      date: postTime,
-      text: commentValue};
+      date: commentTime,
+      text: commentValue,
+      id: this.state.commentsNumber + 1};
     const commentCount = this.state.commentsNumber;
     this.setState({
       comments: [...this.state.comments, newComment],
@@ -75,14 +75,31 @@ class Comments extends Component {
 
   onKeyPress = (e) => {
     if (e.key === 'Enter'){
-      var commentTime = new Date();
+      var commentTime = new Date().toISOString();
       this.addCommentHandler(e.target.value, commentTime)
       e.target.value = "";
     }
   }
+  sortCommentsByDate = (date1, date2) => {
+      var dateObj_1 = new Date(date1.props.commentDate).getTime();
+      var dateObj_2 = new Date(date2.props.commentDate).getTime();
+      if (dateObj_1 > dateObj_2) {return 1};
+      if (dateObj_2 > dateObj_1) {return -1};
+    return 0;
+  }
+  DisplayComments = () => {
+    const commentsList = this.state.comments;
+    const comments = commentsList.map(comment =>
+      <Comment
+        key={comment.id}
+        name={comment.name}
+        commentDate={comment.date}
+        commentValue={comment.text}/>).sort(this.sortCommentsByDate);
+    return comments;
+  }
 
   render() {
-    const {isLoaded, comments, commentsNumber} = this.state;
+    const {isLoaded, commentsNumber} = this.state;
 
     if (!isLoaded) {
       return (
@@ -101,10 +118,7 @@ class Comments extends Component {
             />
           <CommentsWrapper
             commentsVisible={this.props.commentsVisible}>
-          {comments.map(comment =>  <Comment
-              name={comment.name}
-              commentDate={comment.date}
-              commentValue={comment.text}/>)}
+          <this.DisplayComments/>
           </CommentsWrapper>
           <AddComment
             commentsVisible={this.props.commentsVisible}

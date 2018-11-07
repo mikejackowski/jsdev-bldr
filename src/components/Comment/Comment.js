@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import pic from '../../assets/images/hs.png';
 import propTypes from 'prop-types';
+import { formatDistance } from 'date-fns';
 
 const StyledWrapper = styled.div`
   width: 427px;
@@ -18,10 +19,6 @@ const StyledWrapper = styled.div`
 
   &:first-child {
     padding-top: 0;
-  }
-
-  &:last-child {
-    border-bottom: none;
   }
 `
 const StyledImg = styled.img`
@@ -61,13 +58,19 @@ const StyledCommentTopWrapper = styled.div`
   height: 40px;
   align-items: center;
 `
+function FormatDate(dateString) {
+  return formatDistance(new Date(dateString).toISOString(), new Date().toISOString());
+
+}
 const Comment = (props) => (
   <StyledWrapper>
     <StyledImg src={pic}/>
     <StyledCommentContentWrapper>
       <StyledCommentTopWrapper>
         <StyledName>{props.name}</StyledName>
-        <StyledDate>{props.commentDate}</StyledDate>
+        <StyledDate>
+          {FormatDate(props.commentDate)}
+        </StyledDate>
       </StyledCommentTopWrapper>
       <StyledCommentText>{props.commentValue}</StyledCommentText>
     </StyledCommentContentWrapper>
