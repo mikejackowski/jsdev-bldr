@@ -74,12 +74,13 @@ class Comments extends Component {
   }
 
   onKeyPress = (e) => {
-    if (e.key === 'Enter'){
-      var commentTime = new Date().toISOString();
-      this.addCommentHandler(e.target.value, commentTime)
-      e.target.value = "";
+    if (e.target.value !== "") {
+      if (e.key === 'Enter'){
+        var commentTime = new Date().toISOString();
+        this.addCommentHandler(e.target.value, commentTime)
+        e.target.value = "";
+      }
     }
-
   }
 
   sortCommentsByDate = (date1, date2) => {

@@ -24,10 +24,12 @@ const StyledAdressDiv = styled.div`
   box-sizing: border-box;
   border-bottom: 1px solid #d7d7d7;
   font-weight: 600;
+  padding: 20px 0 0 10px;
   padding-top: 20px;
   font-size: 14px;
   color: #002C71;
   overflow: auto;
+  white-space: nowrap;
 
 @media (max-width: 500px) {
 

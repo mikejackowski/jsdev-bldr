@@ -33,7 +33,9 @@ const StyledLocationP = styled.p`
   }
 `
 
-const StyledHearthDiv = styled.div`
+const StyledHearthButton = styled.button`
+  padding: 0;
+  border: none;
   height: 7px;
   width: 7px;
   transform: rotate(-45deg);
@@ -51,6 +53,7 @@ const StyledHearthDiv = styled.div`
     position: absolute;
     width: 7px;
     left: 4px;
+    top: 0px;
   }
 
   &::before {
@@ -67,7 +70,7 @@ const ProfileName = (props) => (
   <StyledWrapperDiv>
     <StyledNameP>
       {props.name}
-      <StyledHearthDiv
+      <StyledHearthButton
         clicked={props.likeStatus}
         onClick={props.increaseLikes}/>
     </StyledNameP>
