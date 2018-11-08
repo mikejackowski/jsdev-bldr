@@ -36,6 +36,7 @@ export const StyledLoadingDiv = styled.div`
 const CommentsWrapper = styled.div`
   height: 479px;
   overflow: auto;
+  overflow-x: hidden;
   visibility: ${props => props.commentsVisible ? "visible" : "hidden"};
   margin-top: 30px;
   @media (max-width: 500px) {
