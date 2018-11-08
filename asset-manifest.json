@@ -1,7 +1,7 @@
 {
   "main.css": "/jsdev-bldr/static/css/main.e9ccce74.chunk.css",
-  "main.js": "/jsdev-bldr/static/js/main.663b7dc6.chunk.js",
-  "main.js.map": "/jsdev-bldr/static/js/main.663b7dc6.chunk.js.map",
+  "main.js": "/jsdev-bldr/static/js/main.feed5f6d.chunk.js",
+  "main.js.map": "/jsdev-bldr/static/js/main.feed5f6d.chunk.js.map",
   "static/js/1.2a3e1a84.chunk.js": "/jsdev-bldr/static/js/1.2a3e1a84.chunk.js",
   "static/js/1.2a3e1a84.chunk.js.map": "/jsdev-bldr/static/js/1.2a3e1a84.chunk.js.map",
   "runtime~main.js": "/jsdev-bldr/static/js/runtime~main.c1d59989.js",
@@ -10,6 +10,6 @@
   "static/media/hs.png": "/jsdev-bldr/static/media/hs.0a76cb5e.png",
   "static/media/copy.svg": "/jsdev-bldr/static/media/copy.c6b23471.svg",
   "index.html": "/jsdev-bldr/index.html",
-  "precache-manifest.dce97a6c3d53a60303658406d98ec3a4.js": "/jsdev-bldr/precache-manifest.dce97a6c3d53a60303658406d98ec3a4.js",
+  "precache-manifest.9533fa1086feed12f0a075c03d47cc97.js": "/jsdev-bldr/precache-manifest.9533fa1086feed12f0a075c03d47cc97.js",
   "service-worker.js": "/jsdev-bldr/service-worker.js"
 }
