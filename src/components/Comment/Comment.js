@@ -26,20 +26,17 @@ const StyledImg = styled.img`
   height: 40px;
 `
 const StyledName = styled.div`
-  font-family: Montserrat-Regular;
   font-size: 14px;
   color: #002C71;
   letter-spacing: 0;
 `
 const StyledDate = styled.div`
   opacity: 0.5;
-  font-family: Montserrat-Regular;
   font-size: 14px;
   color: #002C71;
   letter-spacing: 0;
 `
 const StyledCommentText = styled.div`
-  font-family: Montserrat-Regular;
   font-size: 14px;
   color: #444444;
   letter-spacing: 0;

@@ -12,7 +12,6 @@ const StyledWrapperDiv = styled.div`
 `
 const StyledNameP = styled.div`
   position: relative;
-  font-family: Montserrat-Regular;
   font-size: 18px;
   color: #002C71;
   letter-spacing: 0;
@@ -24,7 +23,6 @@ const StyledNameP = styled.div`
 const StyledLocationP = styled.p`
   margin: 0;
   padding: 0;
-  font-family: Montserrat-Regular;
   font-size: 12px;
   color: #8298B9;
   letter-spacing: 0;
@@ -40,8 +38,8 @@ const StyledHearthDiv = styled.div`
   width: 7px;
   transform: rotate(-45deg);
   position: absolute;
-  right: 63%;
-  top: 10px;
+  right: 55%;
+  top: 9px;
   cursor: pointer;
   background-color: ${props => props.clicked ?  "red" : "#D9D9D9"};
 
@@ -61,7 +59,7 @@ const StyledHearthDiv = styled.div`
   }
 
   @media (max-width: 500px) {
-    right: 24%;
+    right: 19%;
   }
 `
 

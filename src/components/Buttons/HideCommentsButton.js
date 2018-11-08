@@ -4,7 +4,6 @@ import styled from 'styled-components';
 
 const StyledButton = styled.button`
   cursor: pointer;
-  font-family: Montserrat-Regular;
   font-size: 14px;
   color: #FFA640;
   letter-spacing: 0;

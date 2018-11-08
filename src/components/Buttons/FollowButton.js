@@ -8,7 +8,7 @@ const StyledButton = styled.button`
   box-sizing: border-box;
   border-radius: 100px;
   outline: none;
-  font-family: Montserrat-SemiBold;
+  font-weight: 600;
   font-size: 14px;
   color: #FFFFFF;
   letter-spacing: 4.2px;
@@ -16,6 +16,7 @@ const StyledButton = styled.button`
   cursor: pointer;
   border: none;
   padding: 0;
+  margin-left: 15px;
 
   @media (max-width: 500px){
     width: 248px;
@@ -23,6 +24,7 @@ const StyledButton = styled.button`
     grid-column: span 3;
     place-self: center;
     margin-top: 21px;
+    margin-left: 0;
   }
 `
 

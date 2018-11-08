@@ -9,7 +9,6 @@ const StyledDivWrapper = styled.div`
 
   @media (max-width: 500px){
     grid-template-columns: repeat(3, 33%);
-    grid-template-rows: repeat(2, 100%);
     grid-template-areas: "1 2 3" "4 4 4";
   }
 `
@@ -29,7 +28,6 @@ const StyledCounterWrapper = styled.div`
   }
 `
 const StyledNumberP = styled.p`
-  font-family: Montserrat-Regular;
   font-size: 24px;
   color: #FFA640;
   letter-spacing: 0;
@@ -37,7 +35,6 @@ const StyledNumberP = styled.p`
   margin: 0;
 `
 const StyledIdentifierP = styled.div`
-  font-family: Montserrat-Regular;
   font-size: 10px;
   color: #343E00;
   letter-spacing: 0;

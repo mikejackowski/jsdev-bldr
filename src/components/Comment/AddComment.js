@@ -9,7 +9,6 @@ const StyledInput = styled.input`
   text-align: left;
   justify-content: center;
   margin: 0 auto;
-  font-family: Montserrat-Regular;
   font-size: 18px;
   color: #8298B9;
   letter-spacing: 0;

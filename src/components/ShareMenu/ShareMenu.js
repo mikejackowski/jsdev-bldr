@@ -23,7 +23,7 @@ const StyledAdressDiv = styled.div`
   height: 50px;
   box-sizing: border-box;
   border-bottom: 1px solid #d7d7d7;
-  font-family: Montserrat-SemiBold;
+  font-weight: 600;
   padding-top: 20px;
   font-size: 14px;
   color: #002C71;

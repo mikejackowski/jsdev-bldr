@@ -78,7 +78,6 @@ class Comments extends Component {
       var commentTime = new Date().toISOString();
       this.addCommentHandler(e.target.value, commentTime)
       e.target.value = "";
-      this.bottomComment.scrollIntoView({behavior: "smooth"});
     }
 
   }
@@ -91,6 +90,11 @@ class Comments extends Component {
     return 0;
   }
 
+  componentDidUpdate(prevProps) {
+    if (this.state.commentsNumber !== prevProps.commentsNumber){
+      this.bottomComment.scrollIntoView({behavior: "smooth"});
+    }
+  }
   DisplayComments = () => {
     const commentsList = this.state.comments;
     const comments = commentsList.map(comment =>
