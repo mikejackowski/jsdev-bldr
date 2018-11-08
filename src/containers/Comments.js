@@ -92,8 +92,10 @@ class Comments extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (this.state.commentsNumber !== prevProps.commentsNumber){
-      this.bottomComment.scrollIntoView({behavior: "smooth"});
+    if (this.state.commentsNumber !==  commentsJson.comments.length){
+      if (this.state.commentsNumber !== prevProps.commentsNumber){
+        this.bottomComment.scrollIntoView({behavior: "smooth"});
+      }
     }
   }
   DisplayComments = () => {
