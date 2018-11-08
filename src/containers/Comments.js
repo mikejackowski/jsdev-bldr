@@ -78,9 +78,7 @@ class Comments extends Component {
       var commentTime = new Date().toISOString();
       this.addCommentHandler(e.target.value, commentTime)
       e.target.value = "";
-      console.log("hehehe");
-      var myDiv = document.getElementById("bottomdiv");
-      myDiv.scrollIntoView({behavior: "smooth"});
+      this.bottomComment.scrollIntoView({behavior: "smooth"});
     }
 
   }
@@ -125,7 +123,7 @@ class Comments extends Component {
           <CommentsWrapper
             commentsVisible={this.props.commentsVisible}>
             <this.DisplayComments/>
-            <div id="bottomdiv"/>
+            <div ref={(el) => { this.bottomComment = el;}}/>
           </CommentsWrapper>
           <AddComment
             commentsVisible={this.props.commentsVisible}
